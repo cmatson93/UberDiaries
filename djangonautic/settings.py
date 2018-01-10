@@ -20,10 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*my)vp_tr1l-b8k&-18y_(*pt-6un_uwnw2+jrdw40$8qfliz#'
-
+# SECRET_KEY = '*my)vp_tr1l-b8k&-18y_(*pt-6un_uwnw2+jrdw40$8qfliz#'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*my)vp_tr1l-b8k&-18y_(*pt-6un_uwnw2+jrdw40$8qfliz#')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG'))
 
 ALLOWED_HOSTS = []
 
@@ -120,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
 
 MEDIA_URL = '/media/'
 

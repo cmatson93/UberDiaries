@@ -1,13 +1,18 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-	<h1>Article List</h1>
+	<div class="jumbotron text-center">
+	  <div class="container">
+	    <h1 class="display-4">Ride Diaries</h1>
+	    <p class="lead">Lift like to say, "It matters how you get there." and whether you are getting there in an Uber or Lyft the ride is always something to remember.</p>
+	  </div>
+	</div>
 	<div class="articles">
 		{% for article in articles %}
 			<div class="article">
 				<h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
 				<p>{{article.snippet}}</p>
-				<p>{{article.date}}</p>
+				<p class="author">By: {{article.author}}</p>
 			</div>
 		{% endfor %}
 	</div>

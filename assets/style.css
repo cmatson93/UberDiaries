@@ -1,0 +1,74 @@
+body{
+    background-color: #0f121f;
+    background-image: url(stars.png);
+    background-repeat-y: no-repeat;
+    color: #fff;
+}
+
+body *{
+    font-family: 'Exo 2', sans-serif;
+}
+
+/*navbar styling*/
+
+.home {
+    color: #4ecdc4;    
+}
+
+.home:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.nav li {
+    margin: 3px;
+}
+
+.nav button {
+    margin: 2px;
+    background-color: #4ecdc4;
+    color: #ffffff;
+}
+
+.nav button:hover {
+    background-color: #40a8a1;
+}
+
+/*Jumbotron styling*/
+.jumbotron {
+    background: none;
+}
+
+.jumbotron h1 {
+    font-size: 75px;
+}
+
+/*Styling for articles section */
+
+.article {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ff6b6b;
+    position: relative;
+}
+
+.article a {
+    color: #4ecdc4;
+    text-decoration: none;
+}
+
+.article .author {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+}
+
+/*Create new article template styling*/
+
+.create-article {
+    margin: auto;
+    padding: 20px;
+}
+
+form 
