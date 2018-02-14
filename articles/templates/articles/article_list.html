@@ -1,20 +1,17 @@
-{% extends 'base_layout.html' %}
-
-{% block content %}
-	<div class="jumbotron text-center">
-	  <div class="container">
-	    <h1 class="display-4">Ride Diaries</h1>
-	    <p class="lead">Lift like to say, "It matters how you get there." and whether you are getting there in an Uber or Lyft the ride is always something to remember.</p>
-	  </div>
-	</div>
-	<div class="articles">
-		{% for article in articles %}
-			<div class="article">
-				<h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
-				<p>{{article.snippet}}</p>
-				<p class="author">By: {{article.author}}</p>
-			</div>
-		{% endfor %}
-	</div>
+{% extends 'base_layout.html' %} {% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Ride Diaries</h1>
+        <p class="lead">Lift likes to say, "It matters how you get there." and whether you are getting there in an Uber or a Lyft the ride and the people you meet make for a story that is worth sharing.</p>
+    </div>
+</div>
+<div class="articles">
+    {% for article in articles %}
+    <div class="article">
+        <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+        <p>{{article.snippet}}</p>
+        <p class="author">By: {{article.author}}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
-
